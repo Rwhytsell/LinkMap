@@ -1,0 +1,10 @@
+package spiderBot;
+
+public class UI {
+
+	//TODO Design UI with options for Link depth, threads to use, Origin URL,...
+	public static void start() {
+		
+	}
+
+}

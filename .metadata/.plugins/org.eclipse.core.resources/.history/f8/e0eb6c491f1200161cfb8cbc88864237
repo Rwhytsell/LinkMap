@@ -1,0 +1,27 @@
+package spiderBot;
+import javax.swing.*;
+
+
+
+@SuppressWarnings("serial")
+public class UI extends JFrame{
+
+	//TODO Design UI with options for Link depth, threads to use, Origin URL,...
+	public static void start() {
+		GuiSpider();
+	}
+	
+	public static void GuiSpider()
+	{
+		JFrame guiFrame = new JFrame();
+		
+		guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		guiFrame.setResizable(false);
+		guiFrame.setTitle("SpiderBot");
+		guiFrame.setSize(600, 500);
+		guiFrame.setLocationRelativeTo(null);
+		guiFrame.setVisible(true);
+		
+		
+	}
+}
