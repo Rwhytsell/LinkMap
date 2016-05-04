@@ -1,0 +1,12 @@
+import UI;
+
+package spiderBot.Spider;
+
+public class Spider {
+
+	public static void main(String[] args) {
+		spiderBot.Spider.UI(start());
+
+	}
+
+}
