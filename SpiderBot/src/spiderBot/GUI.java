@@ -25,12 +25,15 @@ public class GUI extends javax.swing.JFrame {
         StrtButton = new javax.swing.JButton();
         OptionPanel = new javax.swing.JPanel();
         ThrdLabel = new javax.swing.JLabel();
-        ThrdVar = new javax.swing.JTextField();
+        ThrdVar = new javax.swing.JFormattedTextField();
         lkDpth = new javax.swing.JLabel();
-        lkDpthVar = new javax.swing.JTextField();
+        linkDepthVar = new javax.swing.JFormattedTextField();
         Title = new javax.swing.JLabel();
         OrURL = new javax.swing.JLabel();
         OrURLVar = new javax.swing.JTextField();
+        
+        ThrdVar.setValue(new Double(-1));
+        linkDepthVar.setValue(new Double(10.0));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SpiderBot");
@@ -83,7 +86,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(OptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ThrdVar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(lkDpthVar))
+                    .addComponent(linkDepthVar))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         OptionPanelLayout.setVerticalGroup(
@@ -96,7 +99,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(OptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lkDpth)
-                    .addComponent(lkDpthVar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(linkDepthVar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -149,25 +152,23 @@ public class GUI extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void OrURLVarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrURLVarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OrURLVarActionPerformed
+    private void OrURLVarActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
 
-    private void StrtButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StrtButtonMousePressed
-        spiderBot.Spider.initSpider();
-    }//GEN-LAST:event_StrtButtonMousePressed
+    private void StrtButtonMousePressed(java.awt.event.MouseEvent evt) {
+    	
+    	orgURL = OrURLVar.getText();
+    	mxThreads = Double.parseDouble(ThrdVar.getText());
+    	lnkDepth = Double.parseDouble(linkDepthVar.getText());						//Parses text from URL text field and JFormTextFields into double
+    	
+		spiderBot.Spider.initSpider(mxThreads, lnkDepth, orgURL);					//Passes doubles and URL from ^ to spider
+    }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    	
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -184,7 +185,7 @@ public class GUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -194,16 +195,19 @@ public class GUI extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration
     private javax.swing.JPanel OptionPanel;
     private javax.swing.JLabel OrURL;
     private javax.swing.JTextField OrURLVar;
     private javax.swing.JButton StrtButton;
     private javax.swing.JPanel StrtButtonPanel;
     private javax.swing.JLabel ThrdLabel;
-    private javax.swing.JTextField ThrdVar;
+    private javax.swing.JFormattedTextField ThrdVar;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel lkDpth;
-    private javax.swing.JTextField lkDpthVar;
-    // End of variables declaration//GEN-END:variables
+    private javax.swing.JFormattedTextField linkDepthVar;
+    Double mxThreads;
+    Double lnkDepth;
+    String orgURL;
+    // End of variables declaration
 }
