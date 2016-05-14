@@ -10,4 +10,4 @@ Web spider created as a summer project for educational purposes.
 4. Stores on SQL* database
 5. Creates a "map" from the database
 
-* Database may change
+ * Database may change
