@@ -8,7 +8,7 @@ import java.util.*;
 public class Spider {
 
     
-	 public void search(String url, String searchWord, int mxThreads, int MaxLinkDepth)
+	 public void search(String url, int mxThreads, int MaxLinkDepth)
 	  {
 		 	System.out.println("Max threads set at " +mxThreads);
 			System.out.println("Link depth set at " +MaxLinkDepth);
