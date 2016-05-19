@@ -1,8 +1,0 @@
-package spiderBot.UI;
-
-public class UI {
-	void start()
-	{
-		
-	}
-}
