@@ -188,12 +188,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     	
-    	maxThreads =  (int) ThrdMaxVar.getValue();
-    	maxLinkDepth =  (int) lnkDepthVar.getValue();
-    	keyWord = KeyVar.getText();
-    	originURL = originURLVar.getText();
+    	int maxThreads = (int) ThrdMaxVar.getValue();
+    	int maxLinkDepth = (int) lnkDepthVar.getValue();
+    	String originURL = originURLVar.getText();
     	Spider spiderMan = new Spider();
-    	spiderMan.search(originURL, keyWord, maxThreads, maxLinkDepth);
+    	spiderMan.search(originURL, maxThreads, maxLinkDepth);
     	
     }//GEN-LAST:event_jButton1ActionPerformed
 
