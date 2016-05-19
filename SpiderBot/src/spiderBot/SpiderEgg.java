@@ -45,18 +45,12 @@ public class SpiderEgg {
         }
         catch(IOException ioe)
         {
-            // HTTP request failed
+        	System.err.println("HTTP request failed");	// HTTP request failed
+            System.err.println(ioe.getMessage());
             return false;
         }
     }
     
-    /*public boolean searchForWord(String searchWord)
-    {
-        
-        System.out.println("Searching for the word " + searchWord + "...");
-        String bodyText = this.htmlDocument.body().text();
-        return bodyText.toLowerCase().contains(searchWord.toLowerCase());
-    }*/
 
 
     public List<String> getLinks()

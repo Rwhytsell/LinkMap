@@ -2,6 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="F:/Programming/Git/SpiderBot/jsoup-1.9.1.jar" sourcepath="F:/Programming/Git/SpiderBot/jsoup-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Programming/jsoup-1.9.1.jar" sourcepath="E:/Programming/jsoup-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Programming/aws-java-sdk-1.11.2/aws-java-sdk-1.11.2/lib/aws-java-sdk-1.11.2.jar" sourcepath="E:/Programming/aws-java-sdk-1.11.2/aws-java-sdk-1.11.2/lib/aws-java-sdk-1.11.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/E:/Programming/aws-java-sdk-1.11.2/aws-java-sdk-1.11.2/lib/aws-java-sdk-1.11.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
