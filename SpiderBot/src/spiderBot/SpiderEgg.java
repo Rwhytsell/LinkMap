@@ -11,13 +11,12 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class SpiderEgg {
-	//USER_AGENT is to make the webserver think that the spider is a mozzilla firefox browser
-    private static final String USER_AGENT ="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.112 Safari/535.1";
+	//USER_AGENT is to make the webserver think that the spider is a vivaldi browser
+    private static final String USER_AGENT ="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 "
+    		+ "(KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36 Vivaldi/1.1.453.59";
+    
+    
     private List<String> links = new LinkedList<String>();
-    
-    
-    
-    
     
     public boolean crawl(String url)
     {
@@ -40,6 +39,9 @@ public class SpiderEgg {
             for(Element link : linksOnPage)
             {
                 this.links.add(link.absUrl("href"));
+            }
+            if(getLinks().size() != 0){
+                LinkMapDB.addNode(url,getLinks());
             }
             return true;
         }
