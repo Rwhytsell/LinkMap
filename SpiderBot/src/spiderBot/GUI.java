@@ -46,6 +46,7 @@ public class GUI extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(600, 600));
         setName("SpiderFrame"); // NOI18N
         setResizable(false);
+        setLocationRelativeTo(null);
 
         Title.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -72,7 +73,7 @@ public class GUI extends javax.swing.JFrame {
 
         ThrLabel.setText("Number of Threads:");
 
-        ThrdMaxVar.setText("-1");
+        ThrdMaxVar.setValue(-1);
         ThrdMaxVar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ThrdMaxVarActionPerformed(evt);
@@ -82,7 +83,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Link depth:");
 
-        lnkDepthVar.setText("10");
+        lnkDepthVar.setValue(10);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
